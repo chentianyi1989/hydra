@@ -18,7 +18,7 @@
             <p class="level_tips">您的账户安全等级：<span class="level_line"><span class="level" levelNum='30%'></span></span>低 <a class="change_psw" href="{{ route('member.login_psw') }}">更换密码</a></p>
             <div class="basic_modify">
                 <a href="{{ route('member.bank_load') }}" class="after"><i class="iconfont ">&#xe649;</i>绑定银行卡</a>
-            </div>
+            </div> 
         </div>
         <div class="basic_right">
             <p class="tips">会员VIP等级</p>

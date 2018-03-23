@@ -28,9 +28,7 @@ class IndexController extends ApiClientController
     public function userCenter()
     {
         $api_list = Api::where('on_line', 0)->orderBy('created_at', 'desc')->get();
-        $temp = "m3";
-//         return view('member.single_info', compact('api_list'));
-        return view('web.m3.admin.userCenter', compact('api_list','temp'));
+        return view('member.single_info', compact('api_list'));
     }
 
     /**

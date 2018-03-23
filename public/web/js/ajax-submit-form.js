@@ -3,7 +3,6 @@
  */
 $(function(){
 
-
     $('.ajax-submit-btn').click(function(){
         var btn = $(this);
         btn.attr('disabled', true);
@@ -22,7 +21,6 @@ $(function(){
                 shade: [0.2, '#ccc'], //遮罩层背景色、透明度,
                 //shade:false
             });
-
             $.ajax({
                 type: method_s,
                 url: url,

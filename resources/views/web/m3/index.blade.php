@@ -27,7 +27,6 @@
                     </script>
                 </div>
                 <button class="login-box modal-login_submit ajax-submit-btn" type="button">立即登录</button>
-<!--                 <a href="r.htm"  class="join-btn">免费��</a> -->
             </form>
     	</div>
     </div>

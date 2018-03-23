@@ -1,5 +1,7 @@
 @extends('web.layouts.main')
 @section('content')
+
+ 	@include('web.m3.common.login') 
     <div class="body">
         <div class="by-bg">
             <div class="container by-nr">

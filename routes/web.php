@@ -12,32 +12,14 @@
 */
 
 // m3
-Route::group(['domain' => env("web_domain","m3.localhost"),'namespace' => 'Web'],function ($router) {
-    
-    Route::get('/', 'm3\\IndexController@index')->name('web.m3.index');
-    Route::get('liveCasino', 'm3\\IndexController@liveCasino')->name('web.m3.liveCasino');
-    Route::get('lottory', 'm3\\IndexController@lottory')->name('web.m3.lottory');
-    Route::get('egame', 'm3\\IndexController@egame')->name('web.m3.egame');
-    Route::get('catchFish', 'm3\\IndexController@catchFish')->name('web.m3.catchFish');
-    Route::get('esports', 'm3\\IndexController@esports')->name('web.m3.esports');
-    
-    
-    
-    
-    Route::get('activities', 'm3\\IndexController@activityList')->name('web.activityList');
-    Route::get('activity/{id}', 'm3\\IndexController@activityDetail')->name('web.activityDetail');
-    
-    
-    
-    $router->get('register_one', 'm3\\IndexController@register_one')->name('web.register_one');
-    $router->post('register_one', 'm3\\IndexController@post_register_one')->name('web.post_register_one');
-    $router->get('register_two', 'm3\\IndexController@register_two')->name('web.register_two');
-    $router->post('register_two', 'm3\\IndexController@post_register_two')->name('web.post_register_two');
-    $router->get('register_success', 'm3\\IndexController@register_success')->name('web.register_success');
-    $router->get('login', 'm3\\IndexController@login')->name('web.login');
-    
+Route::group(['domain' => env("web_domain","{template}.localhost.com"),'namespace' => 'Web'],function ($router) {
+    Route::get('/', 'IndexController@index')->name('web.index');
+    Route::get('liveCasino', 'IndexController@liveCasino')->name('web.liveCasino');
+    Route::get('lottory', 'IndexController@lottory')->name('web.lottory');
+    Route::get('egame', 'IndexController@egame')->name('web.egame');
+    Route::get('catchFish', 'IndexController@catchFish')->name('web.catchFish');
+    Route::get('esports', 'IndexController@esports')->name('web.esports');
 });
-
 
 
 Route::group(['domain' => env("m_domain","m.localhost"), 'namespace' => 'Wap'],function ($router)
@@ -148,6 +130,7 @@ Route::group(['domain' => env("m_domain","m.localhost"), 'prefix' => 'm','namesp
 });
 
 //前台用户
+
 Route::group(['namespace' => 'Web', 'middleware' => 'web.maintain'],function ($router)
 {
     Route::get('/', 'IndexController@index')->name('web.index');
@@ -181,8 +164,8 @@ Route::group(['namespace' => 'Web', 'middleware' => 'web.maintain'],function ($r
 
 
 
-
 //前台用户'domain' => env("web_domain","m3.localhost"),
+
 Route::group(['prefix' => 'member','namespace' => 'Member'],function ($router)
 {
     //$router->get('login', 'LoginController@showLoginForm')->name('member.login');
@@ -249,6 +232,7 @@ Route::group(['prefix' => 'member','namespace' => 'Member'],function ($router)
     });
 
 });
+
 
 Route::group(['domain' => env("agent_domain","agent.localhost"),'prefix' => 'daili','namespace' => 'Daili'],function ($router){
 

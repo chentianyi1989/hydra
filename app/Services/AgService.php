@@ -26,7 +26,7 @@ class AgService{
         $this->gamePlatform = $mod->api_name;
         $this->debug = 0;
         $this->salt = $this->salt(5);
-        $this->betLimitCode = 'C';
+        $this->betLimitCode = 'A';
         $this->currencyCode = 'CNY';
         $this->isspeed = 0;
         $this->isdemo = 0;

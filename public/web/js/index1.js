@@ -114,7 +114,7 @@ var commomModule = (function ($) {
     });
     $this.find('.set_now').unbind('click').on('click', function () {  //
       $('.loading_shadow').show();
-        $('.user_right').load('safe_manage.html',function(responseTxt,statusTxt,xhr){
+        $('.user_right').load('http://mb3.uc697.com/web/js/safe_manage.html',function(responseTxt,statusTxt,xhr){
           if(statusTxt=="success"){
             $('.loading_shadow').hide();
             $('.user_left li').removeClass('active');

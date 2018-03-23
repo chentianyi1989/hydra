@@ -1,27 +1,29 @@
 .fl{float: left;}
 .fr{float: right;}
-.themeCr{color: #ff3a2b}
-.viceColor{color: #06f}
+.themeCr{color: #000}
+.viceColor{color: #000}
 .hide{display: none;}
 button:focus{border:none;outline: none;}
 
-.user_con{clear: both;margin-top: 175px;border: 1px solid #e8e8e8;box-shadow: 0 0 5px rgba(0,0,0,.06);background: #f6f6f6;
-	overflow: hidden;overflow: hidden;}
+.default_con{clear: both;margin-top: 175px;overflow: hidden;overflow: hidden;width: 1200px;margin-left: auto;margin-right: auto;}
+
+.user_con{clear: both;margin-top: 175px;border: 1px solid #e8e8e8;box-shadow: 0 0 5px rgba(0,0,0,.06);background: #fff4d7;padding-top: 40px;
+	overflow: hidden;}
 .user_con .user_left{width: 16.7%;}
-.user_con .user_right{padding: 0 2.5% 2% 2.5%;background: #fff;margin-left: 16.7%;font-size: 14px;box-shadow: 0 0 7px rgba(0,0,0,.06);
+.user_con .user_right{padding: 0 2.5% 2% 2.5%;background: rgb(220, 209, 168);margin-left: 16.7%;font-size: 14px;box-shadow: 0 0 7px rgba(0,0,0,.06);
 	min-height: 800px}
 .user_con .user_left li .iconfont{font-size: 20px;margin-right: 10px;vertical-align:middle;color: #666}
 .user_con .user_left li a{display: inline-block;width: 100%;height: 68px;line-height: 68px;font-size: 14px;color: #444;
 	border-left: 2px solid #f6f6f6;padding-left: 30px;border-right: 1px solid #e8e8e8;
 	border-bottom: 1px solid #e8e8e8}
-.user_con .user_left .active a{border-left-color: #dd0000;color: #dd0000;border-right: 0px;background: #fff}
-.user_con .user_left .active a .iconfont{color: #dd0000;}
+.user_con .user_left .active a{border-left-color: #000;color: #000;border-right: 0;background: rgb(220, 209, 168)}
+.user_con .user_left .active a .iconfont{color: #000;}
 .userbasic_con{overflow: hidden;padding-top: 20px;border-bottom: 1px solid #e6e6e6;padding-bottom: 20px;}
 .userbasic_con .basic_left{width: 50%;float: left;border-right: 1px solid #e6e6e6}
 .userbasic_con .basic_right{width: 48%;float: left;margin-left: 2%}
 .userbasic_head{height: 68px;line-height: 68px;border-bottom: 1px solid #e8e8e8}
-.userbasic_head a{display: inline-block;padding: 0 45px;height: 67px;border-bottom: 2px solid #fff}
-.userbasic_head a.active{border-bottom: 2px solid #dd0000}
+.userbasic_head a{display: inline-block;padding: 0 45px;height: 67px;border-bottom: 2px solid transparent}
+.userbasic_head a.active{border-bottom: 2px solid #000}
 .level_img{display: inline-block;height: 15px;overflow: hidden;width: 73px}
 .basic_module{padding-top: 20px}
 
@@ -30,7 +32,7 @@ button:focus{border:none;outline: none;}
 .level_tips{font-size: 12px;line-height: 20px}
 .level_line{display: inline-block;background: #eee; width: 200px; height: 6px; border-radius: 6px; overflow: hidden; margin: 6px 12px 0 10px;
 	position: relative;}
-.level_line .level{position: absolute;left: 0;top: 0;height: 6px;border-radius: 6px;background:#ff3a2b;
+.level_line .level{position: absolute;left: 0;top: 0;height: 6px;border-radius: 6px;background:#000;
 	display: inline-block;}
 .level_tips .change_psw {color: #06f;margin-left: 10px}
 
@@ -41,7 +43,7 @@ button:focus{border:none;outline: none;}
 .basic_modify .after .iconfont{color: #50ed92}
 
 .member_wrap{display: inline-block;width: 60px;height: 18px;line-height: 18px;color: #fff;text-align: center;border-radius: 20px;font-weight: 200;
-	background: #ff3a2b}
+	background: #000}
 .vp{background: #bdb6ba}
 .basic_right .level_line{width: 300px}
 .vip_tips{color: #bbb;margin-top: 15px}
@@ -53,27 +55,27 @@ button:focus{border:none;outline: none;}
 .gameroom_list li p{margin: 0 15px}
 .gameroom_list li .account{font-size: 12px}
 .gameroom_list li .name{margin-bottom: 5px}
-.pos{font-size: 16px;font-weight: 500;color: #d00;margin-left: 10px}
-.refresh{display: inline-block;background: url(../images/bg-ico.png) no-repeat center center;
+.pos{font-size: 16px;font-weight: 500;color: #000;margin-left: 10px}
+.refresh{display: inline-block;background: url("../images/bg-ico.png")/*tpa=http://mb3.uc697.com/web/images/bg-ico.png*/ no-repeat center center;
 	background-position: -80px -102px;width: 18px;height: 16px;margin-left: 10px;margin-top: 3px;vertical-align: inherit}
 .gameroom_list li .name .iconfont{font-weight: bold;color: #bbbbbb;vertical-align: bottom;margin-left: 10px;
 	font-size: 20px}
 
-.head_line{background: #f5f5f5;padding: 0 10px;margin-top: 30px;font-weight: normal;font-size: 13px;height: 36px;line-height: 36px}
-.head_line .tit{padding-left: 10px;border-left: 2px solid #d00}
+.head_line{background: #fff4d7;padding: 0 10px;margin-top: 30px;font-weight: normal;font-size: 13px;height: 36px;line-height: 36px}
+.head_line .tit{padding-left: 10px;border-left: 2px solid #000}
 .basic_info .list li{width: 48%;display: inline-block;line-height: 36px;margin-bottom: 5px;margin-top: 10px;font-size: 13px;color: #888}
 .basic_info .list .title{min-width: 100px;display: inline-block;}
 
 .loading_shadow{position: fixed;width: 100%;height: 100%;left: 0;top: 0;right: 0;background: rgba(255,255,255,0.2);z-index: 99999;text-align: center;}
 .loading_shadow .loading_win{display: inline-block;margin: 40px;margin-top: 23%}
 
-.bank_tips{background: #fff4d7;height: 30px;line-height: 30px;padding: 0 12px;color: #f85a3f;font-size: 12px;margin: 18px 0 5px 0;}
+.bank_tips{background: #fff4d7;height: 30px;line-height: 30px;padding: 0 12px;color: #000;font-size: 12px;margin: 18px 0 5px 0;}
 .bank_list{margin-top: 25px}
 .bank_list li{padding: 5px 0;width: 100%;border-bottom: 1px dotted #dcdcdc;line-height: 54px;color: #888;font-size: 12px}
 .bank_list li .tit{color: #444;font-size: 13px;min-width: 100px;display: inline-block;}
-.modify_bank a{display: inline-block;width: 126px;height: 38px;padding: 0;border-radius: 4px;text-align: center;line-height: 38px;cursor: pointer;background: /*url(../image/bg/bg-ico.png) no-repeat 0 -142px*/#fff;border: 1px solid #bbb;box-shadow: 0px 0px 4px rgba(0,0,0,.15);color: #444;font-family: "Microsoft YaHei";font-size: 12px;
+.modify_bank a{display: inline-block;width: 126px;height: 38px;padding: 0;border-radius: 4px;text-align: center;line-height: 38px;cursor: pointer;background: #000;border: 1px solid #bbb;box-shadow: 0px 0px 4px rgba(0,0,0,.15);color: rgb(220, 209, 168);font-family: "Microsoft YaHei";font-size: 12px;
 	margin-top: 25px}
-.modify_bank a:hover{color:#ff3a2b;border-color:#ffa39c;box-shadow:0px 0px 4px rgba(255,58,43,.5);}
+.modify_bank a:hover{color:#000;border-color:#000;box-shadow:0px 0px 4px rgba(255,58,43,.5);}
 
 .close_wrap{display: inline-block;width: 20px;height: 20px;position: absolute;right: 30px;top: 23px;}
 .close_wrap .close{transition:0.3s;}
@@ -138,7 +140,7 @@ button:focus{border:none;outline: none;}
 .msg_list li .tit{font-size: 14px;color: #444;margin:0 20px 0 15px;}
 .msg_list li:last-child{border-bottom: 1px solid #e8e8e8;}
 .account_save{text-align: right;margin-top: 15px;}
-.account_save,.indoor_main,.indoor_main,.account_save{width: 128px;height: 40px;border-radius: 4px;text-align: center;line-height: 38px;background: #ff3a2b;color: #fff;font-size: 12px;display: inline-block;
+.account_save,.indoor_main,.indoor_main,.account_save{width: 128px;height: 40px;border-radius: 4px;text-align: center;line-height: 38px;background: #000;color: rgb(220, 209, 168);font-size: 12px;display: inline-block;
 	border:none;cursor: pointer;}
 .account_default a{background: #fff;border:1px solid #bbbbbb;box-shadow: 0 0 5px #bbb;color: #444;margin-left: 5px}
 
@@ -195,17 +197,17 @@ button:focus{border:none;outline: none;}
 	font-size: 12px}
 .account_form .ways .ways_box .icon{display: inline-block;vertical-align: middle;margin-right: 15px;margin-top: -4px}
 .account_form .ways_box .new_tips{position: absolute;right: 0;top: 0}
-.account_form .account_index .active .check{display: inline-block;width: 20px;height: 20px;background: url(../images/n-u-43b.png) no-repeat;
+.account_form .account_index .active .check{display: inline-block;width: 20px;height: 20px;background: url("../images/n-u-43b.png")/*tpa=http://mb3.uc697.com/web/images/n-u-43b.png*/ no-repeat;
 	background-position:-20px 0px;position: absolute;right: 0;bottom: 0;}
 .account_form .account_index .active{border-color: #ff3a2b}
 .account_form .account_index:nth-of-type(1) .active{border-color: #2acc65;box-shadow: 0 0 5px #2acc65}
 .account_form .account_index:nth-of-type(2) .active{border-color: #ff3a2b;box-shadow: 0 0 5px #ff3a2b;border-color: #ff3a2b}
 .account_form .account_index:nth-of-type(3) .active:nth-of-type(1){border-color: #2acc65;box-shadow: 0 0 5px #2acc65;border-color: #2acc65}
-.account_form .account_index:nth-of-type(3) .active:nth-of-type(1) .check{background: url(../images/n-u-43b.png) no-repeat;background-position:0px 0px;}
+.account_form .account_index:nth-of-type(3) .active:nth-of-type(1) .check{background: url("../images/n-u-43b.png")/*tpa=http://mb3.uc697.com/web/images/n-u-43b.png*/ no-repeat;background-position:0px 0px;}
 .account_form .account_index:nth-of-type(3) .active:nth-of-type(2){border-color: #0099ff;box-shadow: 0 0 5px #0099ff;border-color: #0099ff}
-.account_form .account_index:nth-of-type(3) .active:nth-of-type(2) .check{background: url(../images/n-u-43b.png) no-repeat;background-position:-40px 0px;}
+.account_form .account_index:nth-of-type(3) .active:nth-of-type(2) .check{background: url("../images/n-u-43b.png")/*tpa=http://mb3.uc697.com/web/images/n-u-43b.png*/ no-repeat;background-position:-40px 0px;}
 .account_form .account_index:nth-of-type(3) .active:nth-of-type(3){border-color: #0099ff;box-shadow: 0 0 5px #0099ff;border-color: #0099ff}
-.account_form .account_index:nth-of-type(3) .active:nth-of-type(3) .check{background: url(../images/n-u-43b.png) no-repeat;background-position:-40px 0px;}
+.account_form .account_index:nth-of-type(3) .active:nth-of-type(3) .check{background: url("../images/n-u-43b.png")/*tpa=http://mb3.uc697.com/web/images/n-u-43b.png*/ no-repeat;background-position:-40px 0px;}
 
 
 .account_form .ways .shake{ -webkit-animation: gogogo1 0.5s infinite linear; position: absolute;left: 160px;margin-top: 15px;}
@@ -221,24 +223,24 @@ button:focus{border:none;outline: none;}
 .account_form .warm_tips{display: none;}
 
 @keyframes gogogo1{
-	0%{left:160px;top:0;}
-	60%{left:164px;top:0px;}
-	100%{left:160px;top:0px;}
+    0%{left:160px;top:0;}
+    60%{left:164px;top:0px;}
+    100%{left:160px;top:0px;}
 }
 @-webkit-keyframes gogogo1{
-	0%{left:160px;top:0;}
-	60%{left:164px;top:0px;}
-	100%{left:160px;top:0px;}
+    0%{left:160px;top:0;}
+    60%{left:164px;top:0px;}
+    100%{left:160px;top:0px;}
 }
 @-moz-keyframes gogogo1{
-	0%{left:160px;top:0;}
-	60%{left:164px;top:0px;}
-	100%{left:160px;top:0px;}
+    0%{left:160px;top:0;}
+    60%{left:164px;top:0px;}
+    100%{left:160px;top:0px;}
 }
 @-o-keyframes gogogo1{
-	0%{left:160px;top:0;}
-	60%{left:164px;top:0px;}
-	100%{left:160px;top:0px;}
+    0%{left:160px;top:0;}
+    60%{left:164px;top:0px;}
+    100%{left:160px;top:0px;}
 }
 
 .account_form  .choosebank{display: none;padding: 0 0 20px;}
@@ -318,15 +320,15 @@ button:focus{border:none;outline: none;}
 
 .notice_layer{background: #fff;display: none;}
 .notice_layer h3{height: 50px;line-height: 50px;position: relative;background: #ed2d2d;padding: 0 25px;font-size: 18px;color: #fff;font-weight: normal;}
-.notice_layer h3 .close{position: absolute;display: inline-block;width: 20px;height: 20px;background: url(../images/bg-ico.png) no-repeat center center;
+.notice_layer h3 .close{position: absolute;display: inline-block;width: 20px;height: 20px;background: url("../images/bg-ico.png")/*tpa=http://mb3.uc697.com/web/images/bg-ico.png*/ no-repeat center center;
 	background-position: -160px -140px;right: 15px;top: 15px;cursor: pointer;}
 .notice_layer .notice_con{height: 345px;background: #f2f2f2;padding: 20px;overflow-y: auto;}
 .notice_layer .notice_con .module{    padding: 10px 20px;background: #f5f5f5;margin-bottom: 20px;
-	border-radius: 4px;border: 1px solid #e6e6e6;}
+    border-radius: 4px;border: 1px solid #e6e6e6;}
 .notice_layer .notice_con .module h4{line-height: 32px;font-size: 15px;font-weight: 500;color: #333;}
 .notice_layer .notice_con .module p{line-height: 24px;color: #707070;font-size: 12px;padding: 6px 0px;text-indent: 2em;}
 
-.top_margin{margin-top: 175px;}
+.top_margin{padding-top: 175px;background: #1b191a;overflow: hidden}
 .register_con{background: #fff;overflow: hidden;box-shadow: 0 0 5px #ddd}
 .register_con .top{height: 72px;line-height: 72px;border-bottom: 1px solid #e6e6e6}
 .register_con .top a{display: inline-block;width: 33%;text-align: center;font-size: 16px;color: #b3b3b3;border-bottom: 2px solid #fff;
@@ -359,49 +361,34 @@ button:focus{border:none;outline: none;}
 .success_next{font-size: 15px}
 .success_next .themeCr{font-weight: bold;}
 .register_morestep{text-align: right;line-height: 60px;
-	color: #666;font-size: 12px}
+    color: #666;font-size: 12px}
 .register_morestep a{color: #06f;text-decoration: underline;margin: 0 6px}
 
-.pay_way_wrap .pay_way_line select{
-	width: 180px;
-	height: 38px;
-	border: 1px solid #d0d0d0;
-	font-size: 12px;
-	color: #999;
-	padding: 0 5px;
-	margin-right: 10px;
-	border-radius: 3px;
-	box-shadow: 2px 2px 1px rgba(0,0,0,.06), inset 1px 1px 3px rgba(0,0,0,.06);
-}
+.pay_way_wrap .pay_way_line{}
 .pay_way_wrap .pay_way_line .tit{width: 123px;float: left;padding-top: 40px}
 .pay_way_wrap .pay_way_line .con{margin-left: 123px;padding-left: 20px;border-bottom: 1px solid #e8e8e8;padding: 25px 0;overflow: hidden;}
 .pay_way_wrap .pay_way_line .con p{padding: 5px 0}
 .pay_way_wrap .pay_way_line ul li{font-size: 14px;line-height: 22px}
 .pay_way_wrap .pay_way_line:last-child .con{border-bottom: none;}
 .pay_way_wrap .inp,.rendezvous-input input{width: 150px; height: 38px; margin-top: 2px;background: #fff; border: 1px solid #d0d0d0; border-radius: 2px; box-shadow: 2px 2px 1px rgba(0,0,0,.06),inset 1px 1px 3px rgba(0,0,0,.06); line-height: 40px; font-size: 12px; color: #999;padding: 0 5px;margin-right: 10px}
-.pay_way_wrap .pay_way_line .bank-list img{
-	display: inline-block;
-	vertical-align: middle;
-	margin: 10px ;
-}
 
 .rendezvous-input input{}
 .rendezvous-container{display: inline-block;}
-.rendezvous-container input{background: url(../images/datebg.png) no-repeat 116px center;}
+.rendezvous-container input{background: url("../images/datebg.png")/*tpa=http://mb3.uc697.com/web/images/datebg.png*/ no-repeat 116px center;}
 .pay_way_wrap .pay_way_line .select{background: #fff; border: 1px solid #d0d0d0; border-radius: 2px;margin-right: 3px}
 .pay_way_wrap .pay_way_line p .select{width: 150px;height: 38px;box-shadow: 2px 2px 1px rgba(0,0,0,.06),inset 1px 1px 3px rgba(0,0,0,.06); }
 
 .quit_btn{color: #aaa;font-size: 13px;margin-left: 5px}
 .quit_btn:hover{color: #aaa;}
 .nav .right_worklist{background: rgba(200,200,200,.06);
-	padding: 0px 16px 0px 12px;margin-top: 17px;
-	border-radius: 40px;height: 44px;line-height: 44px}
+    padding: 0px 16px 0px 12px;margin-top: 17px;
+    border-radius: 40px;height: 44px;line-height: 44px}
 .nav .right_worklist em{display: inline-block;color: #fff;    -moz-opacity: .15;
-	opacity: .15;
-	filter: alpha(opacity=15);}
-.minnav .right_worklist{height: 40px;line-height: 40px;background: none;margin-top: 0px;}
+    opacity: .15;
+    filter: alpha(opacity=15);}
+   .minnav .right_worklist{height: 40px;line-height: 40px;background: none;margin-top: 0px;}
 .nav .right_worklist a{border: none;margin: 0;width: auto;padding: 0 5px;color: #e6e6e6;position: relative;}
-.news_tips{display: inline-block;width: 16px;height: 16px;border-radius: 100%;background: #ff5544;color: #fff;text-align: center;
+.news_tips{display: inline-block;width: 16px;height: 16px;border-radius: 100%;background: #ff5544;color: #fff;text-align: center;	
 	line-height: 15px;font-size: 12px;right: -13px;top: -2px;position: absolute;}
 .nav .right_worklist a:hover{color: #ff3a2b}
 .nav .right_worklist .iconfont{color: #d03226;margin-right: -2px}
@@ -410,7 +397,7 @@ button:focus{border:none;outline: none;}
 .gameroom_list li{cursor: pointer;}
 .gameroom_list li.on{background: #fffaf8;box-shadow: 0 0 5px #ff7469;border-color: #ff7469;}
 .gameroom_list li.on em{display: block;}
-.gameroom_list li em{display: inline-block;width: 20px;height: 20px;background: url(../images/n-u-43b.png) no-repeat;
+.gameroom_list li em{display: inline-block;width: 20px;height: 20px;background: url("../images/n-u-43b.png")/*tpa=http://mb3.uc697.com/web/images/n-u-43b.png*/ no-repeat;
 	background-position:-20px 0px;position: absolute;right: 0;bottom: 0;display: none;}
 .dividend_bonus{display: none;}
 
@@ -429,7 +416,7 @@ button:focus{border:none;outline: none;}
 
 /*calander*/
 .Wdate{    border: 1px solid #d0d0d0!important;font-size: 12px;color: #999;padding: 0 5px;margin-right: 10px;height: 30px!important;border-radius: 3px;
-	box-shadow: 2px 2px 1px rgba(0,0,0,.06),inset 1px 1px 3px rgba(0,0,0,.06)!important;}
+    box-shadow: 2px 2px 1px rgba(0,0,0,.06),inset 1px 1px 3px rgba(0,0,0,.06)!important;}
 
 /*status*/
 .status_confirming{color: #ffae00}
@@ -440,9 +427,9 @@ button:focus{border:none;outline: none;}
 /*egame*/
 .egameslide .hd ul li,.egameslide .hd .last{width: 169px;height: 120px;background: #fff;border: 1px solid #f0f0f0;border-bottom: none;border-top: none;text-align: center;position: relative;cursor: pointer;float: left;}
 .egameslide .hd ul li .isComing,.egameslide .hd .last .isComing{
-	position: absolute;
-	left: 0;
-	top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 .egameslide .hd ul li .tit{font-size: 14px;line-height: 16px;font-weight: 200;color: #333;}
 .egameslide .hd ul li .pic{text-align: center;}
@@ -466,19 +453,19 @@ button:focus{border:none;outline: none;}
 
 .egame_filter_top .list_wrap{vertical-align: text-bottom;display: inline-block;height: 52px;line-height: 60px;border-bottom: 2px solid #fff;float: left;}
 .egame_filter_top .list{display: inline-block;height: 20px;
-	border-right: 2px solid #e8e8e8;
-	padding: 0 36px;line-height: 20px;
-	position: relative;
-	cursor: pointer;
-	font-size: 14px;
-	color: #333;}
+    border-right: 2px solid #e8e8e8;
+    padding: 0 36px;line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;}
 .egame_filter_top .list_wrap.active{border-bottom-color: #e10;color: #e10}
 .egame_filter_top .list_wrap.active a{color: #e10}
-.egame_filter_top .love{color: #e10;vertical-align: middle;margin-left: 5px}
+.egame_filter_top .love{color: #e10;vertical-align: middle;margin-left: 5px;position: relative;    transition: all .2s ease-in;}
 
 .egameslide .hd{background: #fff;overflow: hidden;}
 .egame_filter_top{clear: both;height: 60px;border-top: 4px solid #f2f2f2;border-bottom: 4px solid #f2f2f2;position: relative;line-height: 60px;z-index: 9;background: #fff}
-.egame_filter_top .title{font-weight: normal;line-height: 55px;float: left;font-size: 24px;margin-right: 30px;float: left;}
+.egame_filter_top .title{font-weight: normal;line-height: 55px;float: left;font-size: 24px;margin-right: 30px;}
 .egame_filter_top .title img{vertical-align: middle;margin-left: 15px;margin-right: 15px;margin-top: -12px;display: inline-block}
 
 .list_showtype{display: inline-block; height: 34px;width: 91px;line-height: 34px;border: 1px solid #c2c2c2;border-radius: 36px;box-shadow: 0 0 5px rgba(0,0,0,.12);margin: 12px 100px 0 60px;overflow: hidden;float: left;}
@@ -486,9 +473,20 @@ button:focus{border:none;outline: none;}
 .list_showtype .iconfont{vertical-align: bottom;}
 .list_showtype .list_one{background: #f0f0f0;border-right: 1px solid #d2d2d2;}
 
-.search_inp{min-width: 34px;line-height: 34px;height: 34px;display: inline-block;margin-left: -30px;border-radius: 36px;background: none;border: 1px solid #aaa;box-shadow: 0 0 6px rgba(0,0,0,.15);float: left;margin-top: 10px;}
-.search_inp .inp{background:transparent;height: 28px;margin-left: 9px;width: 80%;}
-.search_inp .iconfont{font-size: 20px;vertical-align: middle;}
+.search_inp{min-width: 34px;line-height: 34px;height: 34px;display: inline-block;margin-left: 30px;
+    border-radius: 36px;background: none;border: 1px solid #aaa;box-shadow: 0 0 6px rgba(0,0,0,.15);float: left;margin-top: 10px;}
+.search_inp .inp{background:transparent;height: 28px;margin-left: 9px;width: 70%;border: none;box-shadow: none}
+.search_inp .inp:focus{background:transparent;border: none;box-shadow: none}
+.search_inp .iconfont{font-size: 20px;vertical-align: -11%;cursor: pointer;}
+.search_inp button{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("../images/search.png")/*tpa=http://mb3.uc697.com/web/images/search.png*/ no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    vertical-align: middle;
+}
 
 
 .promotion_con{margin-top: -450px;background: #fff}
@@ -508,7 +506,7 @@ button:focus{border:none;outline: none;}
 .promotion_con .con table td{height: 44px;text-align: center;vertical-align: middle;border-right: 1px solid #312741;border-bottom: 1px solid #312741;color: #222;background: #fff;padding: 15px 10px;}
 .promotion_con .con dd p{padding: 10px 0px;text-align: left;font-size: 13px;line-height: 22px;color: #666;}
 
-.egame_list{float: left;width: 896px;border-right: 4px solid #eee;}
+.egame_list{float: left;width: 100%;border-right: 4px solid #eee;}
 .egame_recommond{float: left;width: 300px;padding: 20px}
 
 .egameslide .module{display: none}
@@ -517,7 +515,7 @@ button:focus{border:none;outline: none;}
 .bodylist{background: #fff;overflow: hidden;}
 .egame_list{overflow: hidden;}
 .egame_list ul li{margin: 26px 2px 12px 38px;opacity: 1;width: 130px;float: left;border: 1px solid #e6e6e6;box-shadow: 2px 2px 0 rgba(0,0,0,.05);border-radius: 12px;position: relative;padding-bottom: 8px;background: #fff;}
-.egame_list ul li .collect{padding: 6px 10px}
+.egame_list ul li .collect{padding: 6px 10px;text-align: center}
 .egame_list ul li img{border-radius: 12px;width: 128px;height: 128px;}
 .egame_list ul li .iconfont{color: #ccc;margin-top: 2px}
 .egame_list ul li .button{position: absolute;left: 0px;top: 24px;display: inline-block;width: 110px;height: 36px;display: none;line-height: 36px;border-radius: 8px;background: #ff3a2b;box-shadow: 0 3px 0 #d82e21;color: #fff;text-align: center;margin: 20px 0 0 9px;cursor: pointer;}
@@ -530,49 +528,136 @@ button:focus{border:none;outline: none;}
 .egame_recommond .top_qrcode dl{max-width: 164px;float: left;margin-left: 10px}
 .egame_recommond .top_qrcode .pc_download{clear: both;display: block;
 	width: 100%;height: 40px;line-height: 40px;text-align: center;background: #f21;color: #fff;
-	border-radius: 3px;font-size: 12px;font-weight: 200;margin-top: 10px;box-shadow: 1px 2px 3px rgba(0,0,0,.15);}
+    border-radius: 3px;font-size: 12px;font-weight: 200;margin-top: 10px;box-shadow: 1px 2px 3px rgba(0,0,0,.15);}
 .egame_recommond .top_qrcode dl dt{    font-size: 16px;font-weight: 200;line-height: 32px;color: #222;}
 .egame_recommond .top_qrcode dl dd{line-height: 20px;color: #999;font-size: 12px}
 
-/*.egame_recommond .hot_recommond{margin-top: 20px;}*/
+.egame_recommond .hot_recommond{margin-top: 20px;}
 .egame_recommond .hot_recommond h3{    border-bottom: 2px solid #e6e6e6;    line-height: 50px;position: relative;margin-bottom: -2px;}
 
 .egame_recommond .hot_recommond h3 .tit{font-size: 16px;line-height: 50px;display: inline-block;border-bottom: 2px solid #d20;}
 
 .egame_recommond .hot_recommond ul li {padding: 16px 0;
-	border-bottom: 2px solid #eee;overflow: hidden;}
+    border-bottom: 2px solid #eee;overflow: hidden;}
 .egame_recommond .hot_recommond ul li .index{float: left;width: 18px;height: 18px;line-height: 18px;text-align: center;border-radius: 3px;
-	background: #eee;color: #666;font-weight: normal;font-size: 12px;}
+    background: #eee;color: #666;font-weight: normal;font-size: 12px;}
 .egame_recommond .hot_recommond ul li .gamepic{float: left;margin-left: 10px;display: none;}
 .egame_recommond .hot_recommond ul li .gamepic img{width: 80px;border-radius: 5px;}
 .egame_recommond .hot_recommond ul li dl{margin-left: 10px;float: left;width: 80%;}
 .egame_recommond .hot_recommond ul li dt{    line-height: 18px;font-size: 13px;font-weight: bold;color: #222;}
 .egame_recommond .hot_recommond li .star{margin-top: 10px;float: right;margin-top: -20px;}
-.egame_recommond .hot_recommond li .star .iconfont{color: #f21;font-size: 16px;width: 14px;display: inline-block}
+.egame_recommond .hot_recommond li .star .iconfont{color: #f21;font-size: 16px;}
 .egame_recommond .hot_recommond li .gogame a{ margin: 6px 0 0 0px;display: inline-block; width: 72px;display: none; height: 26px; border-radius: 3px;
-	line-height: 26px;color: #fff;font-size: 13px;font-weight: normal;text-align: center;background: #ff3a2b;
-	border: 1px solid #ff3a2b;}
+    line-height: 26px;color: #fff;font-size: 13px;font-weight: normal;text-align: center;background: #ff3a2b;
+    border: 1px solid #ff3a2b;}
 .egame_recommond .hot_recommond li.on .index{height: 80px;line-height: 80px;}
 .egame_recommond .hot_recommond li.on .gogame a,.egame_recommond .hot_recommond li.on .gamepic{display: block;}
 .egame_recommond .hot_recommond li.on dl{width: auto;}
 .egame_recommond .hot_recommond li.on .star{float: none;margin-top: 10px}
 
+/*收藏*/
 
+.m-sidebar{position: fixed;top: 0;right: 0;background: #000;z-index: 2000;width: 35px;height: 100%;font-size: 12px;color: #fff;} 
+.cart{color: #fff;text-align:center;line-height: 20px;padding: 200px 0 0 0px;} 
+.cart span{display:block;width:20px;margin:0 auto;} 
+.cart i{width:35px;height:35px;display:block; background:url("car.png")/*tpa=http://mb3.uc697.com/web/css/car.png*/ no-repeat;} 
+#msg{position:fixed; top:300px; right:35px; z-index:10000; width:1px; height:52px; line-height:52px; font-size:20px; text-align:center; color:#fff; background:#360; display:none} 
+.u-flyer{z-index: 99999;}
 
+/*newlead*/
+.new_lead {margin-top: 10px}
+.new_lead .left_nav{width: 240px;float: left;background: #fff;min-height: 600px}
+.new_lead .left_nav a{display: inline-block;width: 100%;height: 60px;line-height: 60px;padding-left: 30px;border-bottom: 2px solid #f2f2f2;
+	position: relative;}
+.new_lead .left_nav a.on{background: #ff4b4b;color: #fff;border-color: #ff4b4b}
+.new_lead .right_details{margin-left: 240px;background: #f5f5f5}
+.new_lead .right_details a{color: #0000ee}
 
+.new_lead h1{line-height: 60px;margin-left: 30px;font-size: 24px;font-weight: 200;color: #e21;border-bottom: 1px solid #f0f0f0}
+.new_lead .right_details dl{margin: 25px 40px 35px}
+.new_lead .right_details dl dt{padding: 0 0 20px 0;line-height: 30px;font-size: 18px;}
+.new_lead .right_details dl dd{ line-height: 32px;font-size: 14px;color: #666;text-indent: 2em;}
+.new_lead .left_nav a:after{content: "";position: absolute;width: 0px;height: 60px;top: 0%;left: 0%;-webkit-transition: all .15s;transition: all .15s;background: #ff4b4b;z-index: 1;}
+.new_lead img{display: inline-block;}
+.new_lead .pic_wrap{text-align: center;margin: 25px 0}
 
+.new_lead .left_nav a:hover:after{top:0;width:5px;}
 
+.pro-e-bg{width: 100%;min-width: 1200px;height: 800px;position: absolute;top: 40px;left: 0px;background: #210339 url("../images/egame-banner-PT.jpg")/*tpa=http://mb3.uc697.com/web/images/egame-banner-PT.jpg*/ no-repeat center top;}
+.egame_con{position: relative;}
 
+.yzm-img{display: inline-block;vertical-align: middle}
+.yzm-img img{vertical-align: middle;position: relative;top: -2px}
 
+.bbinGame ul li img,.saGame ul li img{width: auto;height: auto;position: relative;max-width: none;margin: 0 auto}
+.bbinGame ul li .pic{width: 180px;height: 144px;overflow: hidden}
+.saGame ul li .pic{width: 180px;height: 144px;overflow: hidden}
+.saGame .egame_list{width: 100%}
+.saGame .egame_list ul li .button,.bbinGame .egame_list ul li .button{left: 23px;top: 37px;}
 
+.sendMsg{
+    display: inline-block;
+    width: 128px;
+    height: 40px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 38px;
+    background: #ff3a2b;
+    color: #fff;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+.sendMsg:hover,.sendMsg:focus{
+    color: #fff;
+}
+.sendMsg.active{
+    background: #ccc;
+    color: #333;
+}
 
+.pic01{background:url("../images/guojia.png")/*tpa=http://mb3.uc697.com/web/images/guojia.png*/ no-repeat right center!important; padding-right:65px; color:#fff;margin-right:5px;}
+.slide_down{
+    position: relative;
+}
+.slide_down img{
+    display: none;
+    position: absolute;
+    left: -30px;
+    top: 22px;
+    max-width: none;
+    z-index: 10;
+}
+.slide_down:hover img{
+    display: block;
+}
 
+.tai_footer .footer-suggest a{
+    color: #666;
+}
 
-
-
-
-
-
+.by-bg .mw-by-bg {
+    /*margin-top: 572px;*/
+    width: 1200px;
+    height: 300px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    margin-right: 1px;
+    background: url("../images/buyu-mw.png")/*tpa=http://mb3.uc697.com/web/images/buyu-mw.png*/ no-repeat;
+}
+.by-bg .mw-by-bg a {
+    width: 202px;
+    height: 62px;
+    background: url("../images/buyu-an.png")/*tpa=http://mb3.uc697.com/web/images/buyu-an.png*/ no-repeat;
+    margin: 210px 0 0 155px;
+    cursor: pointer;
+    position: relative;
+}
+.by-bg{
+    height: 1200px!important;
+    background-size: 100% 100%!important;
+}
 
 
 

@@ -1,5 +1,9 @@
 @extends('member.layouts.main')
 @section('content')
+
+
+
+
 <div class="userbasic_head">
     <a href="{{ route('member.userCenter') }}" class="active">基本信息</a>
     <a href="{{ route('member.bank_load') }}">银行资料</a>
@@ -13,9 +17,6 @@
             <p class="tips">您好，<span class="name">{{ $_member->name }}</span><span class="level_img"><img src="{{ asset('/web/images/live-ico.png') }}"></span></p>
             <p class="level_tips">您的账户安全等级：<span class="level_line"><span class="level" levelNum='30%'></span></span>低 <a class="change_psw" href="{{ route('member.login_psw') }}">更换密码</a></p>
             <div class="basic_modify">
-                {{--<a href="javascript:void(0)" _href="safe_manage.html"><i class="iconfont ">&#xe60c;</i>手机验证</a>--}}
-                {{--<a href="javascript:void(0)" _href="safe_manage.html"><i class="iconfont ">&#xe60c;</i>邮箱验证</a>--}}
-                {{--<a href="javascript:void(0)" _href="safe_psw.html"><i class="iconfont ">&#xe60c;</i>安全密码</a>--}}
                 <a href="{{ route('member.bank_load') }}" class="after"><i class="iconfont ">&#xe649;</i>绑定银行卡</a>
             </div>
         </div>

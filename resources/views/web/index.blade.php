@@ -1,114 +1,101 @@
 @extends('web.layouts.main')
 @section('after.js')
-    <script type="text/javascript">
-
+<!--     <script type="text/javascript"> 
         if(/AppleWebKit.*mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){
-
             if(window.location.href.indexOf("?mobile")<0){
-
                 try{
-
                     if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
 
                         window.location.href="http://m.mxxfun.com";
-
                     }else if(/iPad/i.test(navigator.userAgent)){
-
                         window.location.href="http://m.mxxfun.com";
-
                     }else{
-
                         window.location.href="http://m.mxxfun.com"
-
                     }
-
                 }catch(e){}
-
             }
-
         }
-
-    </script>
+    </script>-->
     @endsection
 @section('content')
-<div class="body" style="overflow: hidden">
-    <div class="banner flexslider">
-        <ul class="slides">
-            <li><img src="{{ asset('/web/images/xierdun/banner01.jpg') }}"/></li>
-            <li><img src="{{ asset('/web/images/xierdun/banner02.jpg') }}"/></li>
-            <li><img src="{{ asset('/web/images/xierdun/banner03.jpg') }}"/></li>
-            <li><img src="{{ asset('/web/images/xierdun/banner04.jpg') }}"/></li>
-        </ul>
-    </div>
-
-    <div class="marquee">
-        <div class="container">
-            <div class="pullLeft">最新公告：</div>
-            <marquee class="pullRight" id="mar0" scrollAmount="2" direction="left" onmouseout="this.start()" onmouseover="this.stop()">
-                @foreach($system_notices as $v)
-                    <span>~{{ $v->title }}~</span>
-                    <span>{{ $v->content }}</span>
-                @endforeach
-            </marquee>
-        </div>
-    </div>
-
-    <div class="page-container">
-        <div class="container">
-            <div class="first-game">
-                <a href="{{ route('web.liveCasino') }}" class="game_1"></a>
-                <a href="{{ route('web.lottory') }}" class="game_2"></a>
-                <a href="{{ route('web.egame') }}" class="game_3"></a>
-                <a href="{{ route('web.esports') }}" class="game_4"></a>
-            </div>
-            <div class="max-btn">
-                <div class="bb-btn-box">
-                    <a class="bbin-btn" href="javascript:;"></a>
-                    <a class="mg-btn" href="javascript:;"></a>
-                    <a class="gns-btn" href="javascript:;"></a>
-                </div>
-            </div>
-            <div class="mobile-bg">
-                <a href="" class="mobile-btn"></a>
-                <img class="mobile-erweima" src="{{ asset('/web/images/xierdun/erweima.png') }}" alt="">
-            </div>
-        </div>
+@if (Auth::guard('member')->guest())
+<div class="tai_header-bot ">
+    <div class="wrapper">
+        <div class="account-box">
+        	<form method="POST" action="{{ route('member.login.post') }}">
+                <input type="text" id="login_account" placeholder="账号" class="username" required name="name">
+                <input type="password" id="login_password" placeholder="密码" class="psw" required name="password">
+                <button class="login-box modal-login_submit ajax-submit-btn" type="button">立即登录</button>
+            </form>
+    	</div>
     </div>
 </div>
+@else 
+	@include('web.m3.common.login') 
+@endif
+<div class="tai_banner"></div>
 
+@include('web.m3.common.notice')
+<div class="tai_content">
+	<div>
+		<ul class="tai_game-box">
+			<li class="game notLast"><a href="{{ route('web.egame') }}" ></a></li>
+			<li class="live notLast"><a href="{{ route('web.liveCasino') }}"></a></li>
+			<li class="sport notLast"><a href="{{ route('web.esports') }}" ></a></li>
+			<li class="lottery notLast"><a href="{{ route('web.lottory') }}" ></a></li>
+			<li class="middle">
+<!-- 				<a -->
+<!-- 				href="javascript:if(confirm('http://www.guanzhu.mobi/app/bWBa  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.guanzhu.mobi/app/bWBa'" -->
+<!-- 				 target="_blank"></a> -->
+			</li>
+		</ul>
 
+		<ul class="tai_home-contact">
+			<li class="phone">代理qq：<span>2697173363</span>
+			</li>
+<!-- 			<li class="phone">澳门热线� <span>摩�演�,联系Q�2697173363</span></li> -->
+			<li class="email">邮箱：<span>2697173363@qq.com</span>
+			</li>
+			<li class="kefu">客服中心：<a href="javascript:;"
+				onclick="javascript:window.open('http://wpa.qq.com/msgrd?v=3&uin=2697173363&site=qq&menu=yes','','width=1024,height=768')">
+					SERVICE CENTER </a>
+			</li>
+		</ul>
 
-<div class="notice_layer">
-    <h3>公告详情 <span class="close"></span></h3>
-    <div class="notice_con">
-        @foreach($system_notices as $v)
-            <div class="module">
-                <h4>{{ $v->title }}</h4>
-                <p>✿{{ $v->content }}</p>
-            </div>
-        @endforeach
-    </div>
+		<ul class="branding-area">
+			<li>
+				<h2>国际顶级品牌</h2>
+				<h3>亚洲博彩龙头企业</h3>
+			</li>
+			<li>
+				<h2>国际顶级品牌</h2>
+				<h3>亚洲博彩龙头企业</h3>
+			</li>
+			<li>
+				<h2>国际顶级品牌</h2>
+				<h3>亚洲博彩龙头企业</h3>
+			</li>
+			<li>
+				<h2>国际顶级品牌</h2>
+				<h3>亚洲博彩龙头企业</h3>
+			</li>
+		</ul>
+	</div>
 </div>
-<script>
-    $(function(){
-        $('.show-cate').click(function(){
-            var url = $(this).attr('data-uri');
-            layer.open({
-                type: 2,
-                title: '记录',
-                shadeClose: false,
-                shade: 0.8,
-                area: ['90%', '90%'],
-                content: url
-            });
-        })
-    });
-</script>
-<script>
 
-
+<script>
     (function ($) {
         $(function () {
+            $(window).on('scroll',function(){
+                var windowScroll = $('body').scrollTop();
+                console.log(windowScroll);
+                if(windowScroll>=310){
+                    $('.tai_header-bot').addClass('scrollTop');
+                }else{
+                    $('.tai_header-bot').removeClass('scrollTop');
+                }
+            })
+
             $('.flexslider').flexslider({
                 animation: 'fade',
                 directionNav: false
@@ -128,7 +115,7 @@
                     title: false,
                     closeBtn: 0,
                     area: ['680px'],
-                    skin: 'layui-layer-nobg', //没有背景色
+                    skin: 'layui-layer-nobg', //没有背景�
                     shadeClose: true,
                     content: $('.notice_layer')
                 });
@@ -145,9 +132,8 @@
            //superslide
            var listMarqueIndex=0;
            var listMarqueShow=7;  //要显示的个数
-           var listMarqueLength=$('.txtScroll-top .ntb-egzj li').length;  //总共显示的条数
-            console.log(listMarqueLength);
-           if(listMarqueLength>listMarqueShow){  //大于要显示的个数才执行动画
+           var listMarqueLength=$('.txtScroll-top .ntb-egzj li').length;  //总共显示的条�
+           if(listMarqueLength>listMarqueShow){  //大于要显示的个数才执行动�
             var listMarque=setInterval(function(){
 
                 console.log(listMarqueIndex);
@@ -167,10 +153,9 @@
                },4000);
            }
 
-            $('.disabled').on('click',function(){
-                layer.msg('暂未开放，敬请期待',{icon:6});
+            $('.disabled').on('click', function () {
+                layer.msg('暂未�放，敬请期待', {icon: 6});
             });
-           
         })
     })(jQuery)
 </script>

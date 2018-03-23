@@ -8,7 +8,17 @@
           <div id="memberLatestAnnouncement" style="cursor:pointer;color:#fff;">
             <marquee id="mar0" scrollamount="3" scrolldelay="100" direction="left"
                      onmouseover="this.stop();" onmouseout="this.start();">
-                              <span>~湘娱Game唯一联系方式~</span>
+                     
+                     @foreach($system_notices as $v)
+                        <span>
+                            <h4>{{ $v->title }}</h4>
+                            <p>✿{{ $v->content }}</p>
+                        </span>
+                     @endforeach
+                              
+                              
+                              
+                              
                 <span>QQ:2697173363、2697173363</span>
                           </marquee>
           </div>

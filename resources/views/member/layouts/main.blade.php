@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <title>{{ $web_title or $_system_config->site_name }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('/web/css/flexslider.css') }}">
-    <link rel="stylesheet" href="{{ asset('/web/fonts/iconfont.css') }}">
-    <link rel="stylesheet" href="{{ asset('/web/css/rendezvous.css') }}">
-    <link rel="stylesheet" href="{{ asset('/web/css/index1.css') }}">
-    <link rel="stylesheet" href="{{ asset('/web/css/style.css') }}">
-    <script src="{{ asset('/web/js/jquery-2.1.3.min.js') }}"></script>
+    <meta name="keywords" content="{{ $_system_config->keyword }}">
+    <link rel="stylesheet" href="{{ asset('/web/m3/css/flexslider.css') }}">
+    <link rel="stylesheet" href="{{ asset('/web/m3/css/index1.css') }}">
+    <link rel="stylesheet" href="{{ asset('/web/m3/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/web/m3/fonts/iconfont.css') }}">
+    <script src="{{ asset('/web/m3/js/jquery-2.1.3.min.js') }}"></script>
+    <script src="{{ asset('/web/m3/js/jquery.flexslider.js') }}"></script>
+    <script src="{{ asset('/web/m3/js/index1.js') }}"></script>
+    <script src="{{ asset('/web/m3/js/jquery.SuperSlide.2.1.1.js') }}"></script>
+    <script src="{{ asset('/web/m3/layer/layer.js') }}"></script>
+    <script src="{{ asset('/web/m3/js/ajax-submit-form.js') }}"></script>
+    <script src="{{ asset('/web/m3/js/jquery.lazyload.min.js') }}"></script>
+    <script src="{{ asset('/web/m3/js/common.js') }}"></script>
 </head>
 <body>
 
@@ -45,15 +52,6 @@
 @include('web.layouts.aside')
 @include('web.layouts.footer')
 
-<script src="{{ asset('/web/js/jquery.flexslider.js') }}"></script>
-<script src="{{ asset('/web/js/index1.js') }}"></script>
-<script src="{{ asset('/web/js/common.js') }}"></script>
-<script src="{{ asset('/web/js/jquery.SuperSlide.2.1.1.js') }}"></script>
-<script src="{{ asset('/web/layer/layer.js') }}"></script>
-<script src="{{ asset('/web/js/ajax-submit-form.js') }}"></script>
-<script src="{{ asset('/web/js/rendezvous.js') }}"></script><!--日历-->
-<script src="{{ asset('/web/js/jquery.page.js') }}"></script><!--翻页-->
-<script src="{{ asset('/web/My97DatePicker/WdatePicker.js') }}"></script><!--起止时间日历 My97DatePicker-->
 @yield('after.js')
 <script>
     $.ajaxSetup({

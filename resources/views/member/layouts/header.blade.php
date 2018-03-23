@@ -22,25 +22,6 @@
                 24小时客服QQ: 2697173363
                 <span style="margin-left: 10px;">美东时间: <em id="mdtime"></em></span>
             </div>
-            <ul class="top-nav">
-                <li>
-                    <a style="color: red" href="javascript:;" class="slide_down"> 牌照展示
-                        <img src="web/images/paizhao.png" tppabs="http://mb3.uc697.com/web/images/paizhao.png" alt="">
-                    </a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                </li>
-                <li>
-                    <a style="color: red" href="login.htm" tppabs="http://mb3.uc697.com/member/finance_center">快速充值</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                </li>
-                <li>
-                    <a style="color: red" href="javascript:;" class="daili_apply">代理合作</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                </li>
-                <li>
-                    <a style="color: red" href="activities.htm" tppabs="http://mb3.uc697.com/activities">活动大厅</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                </li>
-                <li>
-                    <a style="color: red" href="" target="_blank">手机APP下载</a>
-                </li>
-            </ul>
         </div>
     </div>
     <div class="tai_nav">

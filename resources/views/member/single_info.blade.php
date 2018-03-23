@@ -14,7 +14,7 @@
     <div class="bank_tips">温馨提示：手机验证后，可自行修改银行相关信息（开户姓名无法修改;绑定的银行卡必须和注册绑定姓名一致，否则无法提款!）</div>
     <div class="basic_module">
         <div class="basic_left">
-            <p class="tips">您好，<span class="name">{{ $_member->name }}</span><span class="level_img"><img src="{{ asset('/web/images/live-ico.png') }}"></span></p>
+            <p class="tips">您好，<span class="name">{{ $_member->name }}</span><span class="level_img"><img src="{{ asset('/web/m7/images/live-ico.png') }}"></span></p>
             <p class="level_tips">您的账户安全等级：<span class="level_line"><span class="level" levelNum='30%'></span></span>低 <a class="change_psw" href="{{ route('member.login_psw') }}">更换密码</a></p>
             <div class="basic_modify">
                 <a href="{{ route('member.bank_load') }}" class="after"><i class="iconfont ">&#xe649;</i>绑定银行卡</a>
@@ -82,7 +82,7 @@
             var pos = _this.parent('p').find('span');
             var money_span = _this.parent('p').next().find('span');
             _this.css({
-                'background':'url({{ asset("/web/images/h-u-loading2.gif") }}) no-repeat center center'
+                'background':'url({{ asset("/web/m7/images/h-u-loading2.gif") }}) no-repeat center center'
             })
             $.ajax({
                 type : 'GET',
@@ -92,7 +92,7 @@
                 success : function(data){
 
                     _this.css({
-                        'background':'url({{ asset("/web/images/bg-ico.png") }}) no-repeat center center',
+                        'background':'url({{ asset("/web/m7/images/bg-ico.png") }}) no-repeat center center',
                         'background-position': '-80px -102px'
                     })
                     if (data.Code != 0)

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('/web/m3/css/index1.css') }}">
     <link rel="stylesheet" href="{{ asset('/web/m3/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('/web/m3/fonts/iconfont.css') }}">
+    
     <script src="{{ asset('/web/m3/js/jquery-2.1.3.min.js') }}"></script>
     <script src="{{ asset('/web/m3/js/jquery.flexslider.js') }}"></script>
     <script src="{{ asset('/web/m3/js/index1.js') }}"></script>
@@ -22,7 +23,7 @@
 
 @include('web.layouts.header')
 
-<div class="container user_con" style="margin-top: 50px;">
+<div class="container user_con" style="margin-top: 150px;">
     <div class="user_left fl">
         <ul>
             <li @if(in_array($web_route, ['member.userCenter', 'member.account_load', 'member.bank_load', 'member.update_bank_info','member.message_list'])) class="active" @endif>

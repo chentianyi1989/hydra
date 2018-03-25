@@ -50,11 +50,15 @@ class IndexController extends Controller
         return view('web.liveCasino', compact('system_notices'));
     }
 
-    public function egame()
+    public function egame(Request $request)
     {
         $system_notices = SystemNotice::where('on_line', 0)->orderBy('sort', 'asc')->orderBy('created_at', 'desc')->get();
         $game_list = GameList::all();
-        return view('web.egame', compact('system_notices','game_list'));
+        $api_name = $request->get('api_name');
+        if (!$api_name) {
+            $api_name = "ag";
+        }
+        return view('web.egame', compact('system_notices','game_list','api_name'));
     }
     public function esports()
     {

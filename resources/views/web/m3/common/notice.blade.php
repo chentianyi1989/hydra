@@ -11,13 +11,10 @@
                      
                      @foreach($system_notices as $v)
                         <span>
-                            <h4>{{ $v->title }}</h4>
-                            <p>✿{{ $v->content }}</p>
+                           <b>{{ $v->title }}</b>
+                           {{ $v->content }}
                         </span>
                      @endforeach
-                              
-                              
-                              
                               
                 <span>QQ:2697173363、2697173363</span>
                           </marquee>

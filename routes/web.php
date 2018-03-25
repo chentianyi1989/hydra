@@ -12,6 +12,7 @@
 */
 
 // m3
+/*
 Route::group(['domain' => env("web_domain","{template}.localhost.com"),'namespace' => 'Web'],function ($router) {
     Route::get('/', 'IndexController@index')->name('web.index');
     Route::get('liveCasino', 'IndexController@liveCasino')->name('web.liveCasino');
@@ -20,7 +21,7 @@ Route::group(['domain' => env("web_domain","{template}.localhost.com"),'namespac
     Route::get('catchFish', 'IndexController@catchFish')->name('web.catchFish');
     Route::get('esports', 'IndexController@esports')->name('web.esports');
 });
-
+*/
 
 Route::group(['domain' => env("m_domain","m.localhost"), 'namespace' => 'Wap'],function ($router)
 {

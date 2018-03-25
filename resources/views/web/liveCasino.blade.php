@@ -35,8 +35,7 @@
             <div class="xx4">
               <span>BBIN 旗舰厅</span>
               <a href="javascript:void(0);" title="BBIN"
-              
-                 @if($_member) 
+                @if($_member) 
                 	onclick="javascript:window.open('{{ route('bbin.playGame') }}?pageSite=live','','width=1024,height=768')" 
               	@else onclick="return alert('请先登录！')"  
               	@endif>进入游戏</a>
@@ -48,8 +47,11 @@
             <div class="xx2">最专业的完善<br>的娱乐平台</div>
             <div class="xx4">
               <span>MG 视讯厅</span>
-              <a href="javascript:void(0);" title="MG"
-                  onclick="return layer.msg('未开放!',{icon:6})" >进入游戏</a>
+              <a href="javascript:void(0);" title="MG" 
+                @if($_member) 
+                	onclick="javascript:window.open('{{ route('mg.playGame') }}','','width=1024,height=768')" 
+              	@else onclick="return alert('请先登录！')"  
+              	@endif>进入游戏</a>
             </div>
             <div class="xx5"><img src="{{ asset('/web/m3/images/zhenren/6.png') }}"></div>
           </li>

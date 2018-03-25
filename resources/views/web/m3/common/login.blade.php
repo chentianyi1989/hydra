@@ -11,6 +11,7 @@
                     <input type="text" id="login_account" placeholder="账号" class="username" required name="name">
                     <input type="password" id="login_password" placeholder="密码" class="psw" required name="password">
                     <button class="login-box modal-login_submit ajax-submit-btn" type="button">立即登录</button>
+                    <a href="{{  route('web.register_one')  }}?i_code=10000" class="join-btn">免费开户</a>
                 </form>
             @else   
                 <div class="">

@@ -16,6 +16,7 @@
                         <th class="col-lg-2 text-center">email</th>
                         <th class="col-lg-2 text-center">操作</th>
                     </tr>
+                    @if ($data)
                     @foreach($data as $item)
                         <tr class="row text-center">
                             <td class="col-lg-1">
@@ -44,6 +45,7 @@
                             </td>
                         </tr>
                     @endforeach
+                    @endif
                 </table>
                 <div class="clearfix">
                     <div class="pull-left" style="margin: 0;">

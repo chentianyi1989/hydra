@@ -75,7 +75,7 @@ class RegisterController extends Controller
         Member::create([
             'name' => $data['name'],
             'password' => bcrypt($data['password']),
-            'invite_code' => time().str_random(5),
+            'invite_code' => str_random(5),
             'real_name' => $data['real_name'],
             'qk_pwd' => $data['qk_pwd'],
             'top_id' => $dali_mod?$dali_mod->id:0

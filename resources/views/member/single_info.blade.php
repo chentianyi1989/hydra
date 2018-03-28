@@ -2,7 +2,7 @@
 @section('content')
 
 
-
+@include('web.m3.common.login') 
 
 <div class="userbasic_head">
     <a href="{{ route('member.userCenter') }}" class="active">基本信息</a>

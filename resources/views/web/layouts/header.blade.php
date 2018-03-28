@@ -70,7 +70,7 @@
         </ul>
     </div>
 </div>
-
+@include('web.m3.common.login') 
 <script>
     (function ($) {
         $(function () {

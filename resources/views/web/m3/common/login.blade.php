@@ -22,6 +22,9 @@
                         <li>  账户余额 :
                             <span class="account">${{ $_member->money }}</span>
                         </li>
+                        <li>  邀请码 :
+                            <span class="account">{{ $_member->invite_code }}</span>
+                        </li>
                     </ul>
                     <ul class="account-nav">
                         <li>
@@ -36,6 +39,7 @@
     					<li>
     						<a href="{{ route('member.indoor_transfer') }}"> 额度转换 </a>
     					</li>
+    					
 <!--     					<li> -->
 <!--     						<a href="http://mb3.uc697.com/member/safe_psw"> 修改取款密码 </a> -->
 <!--     					</li> -->

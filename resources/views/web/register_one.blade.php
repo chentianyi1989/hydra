@@ -15,10 +15,7 @@
                             <input type="hidden" name="i_code" value="{{ $i_code }}">
                             <div class="line">
                                 <span class="tit">登录账号</span>
-                                {{--<div class="add_form">--}}
-                                    {{--<span class="front">tb</span>--}}
                                     <input class="inp" name="name" value="{{ $register_name }}">
-                                {{--</div>--}}
                                 <span class="tips"><span class="themeCr">*</span>必须是7-10个字符，可使用字母、数字，首位不能为0</span>
                             </div>
                             <div class="line">
@@ -30,6 +27,11 @@
                                 <span class="tit">确认密码</span>
                                 <input type="password" class="inp" name="password_confirmation">
                                 <span class="tips"><span class="themeCr">*</span>必须与登录密码一致</span>
+                            </div>
+                            <div class="line">
+                                <span class="tit">邀请码</span>
+                                <input class="inp" name="invite_code">
+                                <span class="tips"><span class="themeCr">*</span>邀请码</span>
                             </div>
                             <div class="line minline">
                                 <span class="tit"></span>

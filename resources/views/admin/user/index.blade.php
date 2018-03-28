@@ -17,6 +17,36 @@
                         <th class="col-lg-2 text-center">操作</th>
                     </tr>
                     
+                    @foreach($data as $item)
+                        <tr class="row text-center">
+                            <td class="col-lg-1">
+                                {{ $item->id }}
+                            </td>
+                            <td>
+                                {{ $item->name }}
+                            </td>
+                            <td>
+                            @if ($item->role)
+                                {{ $item->role->name }}
+                            @endif
+                            </td>
+                            <td class="col-lg-2">
+                                {{ $item->email }}
+                            </td>
+                            <td class="col-lg-2">
+                                <a href="{{ route('user.edit', ['id' => $item->getKey()]) }}" class="btn btn-primary btn-xs">修改</a>
+                                @if($_user->is_super_admin == 1)
+                                    | <button class="btn btn-danger btn-xs"
+                                              data-url="{{route('user.destroy', ['id' => $item->getKey()])}}"
+                                              data-toggle="modal"
+                                              data-target="#delete-modal"
+                                    >  删除
+                                    </button>
+                                @endif
+                            </td>
+                        </tr>
+                    @endforeach
+                    
                 </table>
                 <div class="clearfix">
                     <div class="pull-left" style="margin: 0;">

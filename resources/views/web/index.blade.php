@@ -1,21 +1,21 @@
 @extends('web.layouts.main')
 @section('after.js')
-<!--     <script type="text/javascript"> 
+    <script type="text/javascript"> 
         if(/AppleWebKit.*mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){
             if(window.location.href.indexOf("?mobile")<0){
                 try{
                     if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
 
-                        window.location.href="http://m.mxxfun.com";
+                        window.location.href="http://m.86sny.com";
                     }else if(/iPad/i.test(navigator.userAgent)){
-                        window.location.href="http://m.mxxfun.com";
+                        window.location.href="http://m.86sny.com";
                     }else{
-                        window.location.href="http://m.mxxfun.com"
+                        window.location.href="http://m.86sny.com";
                     }
                 }catch(e){}
             }
         }
-    </script>-->
+    </script>
     @endsection
 @section('content')
 @if (Auth::guard('member')->guest())
@@ -50,18 +50,18 @@
 <!-- 				 target="_blank"></a> -->
 			</li>
 		</ul>
-
+<!-- 
 		<ul class="tai_home-contact">
 			<li class="phone">代理qq：<span>2697173363</span>
 			</li>
-<!-- 			<li class="phone">澳门热线� <span>摩�演�,联系Q�2697173363</span></li> -->
+			<li class="phone">澳门热线� <span>摩�演�,联系Q�2697173363</span></li> 
 			<li class="email">邮箱：<span>2697173363@qq.com</span>
 			</li>
 			<li class="kefu">客服中心：<a href="javascript:;"
 				onclick="javascript:window.open('http://wpa.qq.com/msgrd?v=3&uin=2697173363&site=qq&menu=yes','','width=1024,height=768')">
 					SERVICE CENTER </a>
 			</li>
-		</ul>
+		</ul>-->
 
 		<ul class="branding-area">
 			<li>

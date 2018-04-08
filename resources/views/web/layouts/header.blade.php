@@ -61,12 +61,12 @@
             </li>
            
            
-            <li>
+<!--             <li> 
                 <a href="javascript:;"  onclick="javascript:window.open('http://wpa.qq.com/msgrd?v=3&uin=2697173363&site=qq&menu=yes','','width=1024,height=768')">
-                    	在线客服
-                    <span>SERVICE</span>
-                </a>
-            </li>
+<!--                     	在线客服 -->
+<!--                     <span>SERVICE</span> -->
+<!--                 </a> -->
+<!--             </li> -->
         </ul>
     </div>
 </div>

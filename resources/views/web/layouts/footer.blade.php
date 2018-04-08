@@ -8,6 +8,6 @@
         <a href="javascript:;" class="normalQues_modal">常见问题</a>
     </div>
     <div class="footer-suggest">
-        Copyright 联系QQ:2697173363 Reserved
+<!--         Copyright 联系QQ:2697173363 Reserved -->
     </div>
 </div>

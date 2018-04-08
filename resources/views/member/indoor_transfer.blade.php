@@ -52,22 +52,6 @@
             @endforeach
 
 
-             {{--<li  class="hasnotinfo">--}}
-                {{--<p class="name">PT厅 <span class="pos">N/A</span><a class="refresh" href="javascript:void(0)"></a></p>--}}
-                {{--<em></em>--}}
-              {{--</li>--}}
-              {{--<li class="hasinfo">--}}
-                {{--<p class="name">MG国际厅 <span class="pos">N/A</span><a class="refresh" href="javascript:void(0)"></a></p>--}}
-                {{--<em></em>--}}
-              {{--</li>--}}
-              {{--<li  class="hasinfo">--}}
-                {{--<p class="name">MG厅 <span class="pos">N/A</span><a class="refresh" href="javascript:void(0)"></a></p>--}}
-                {{--<em></em>--}}
-              {{--</li>--}}
-              {{--<li  class="hasnotinfo">--}}
-                {{--<p class="name">波音厅 <span class="pos">N/A</span><a class="refresh" href="javascript:void(0)"></a></p>--}}
-                {{--<em></em>--}}
-              {{--</li>--}}
               <input type="hidden" name="account2">
         </ul>
     </div>

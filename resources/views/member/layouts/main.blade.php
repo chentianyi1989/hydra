@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('/web/m3/css/index1.css') }}">
     <link rel="stylesheet" href="{{ asset('/web/m3/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('/web/m3/fonts/iconfont.css') }}">
+    <link rel="stylesheet" href="{{ asset('/web/css/rendezvous.css') }}">
     
     <script src="{{ asset('/web/m3/js/jquery-2.1.3.min.js') }}"></script>
     <script src="{{ asset('/web/m3/js/jquery.flexslider.js') }}"></script>
@@ -18,6 +19,7 @@
     <script src="{{ asset('/web/m3/js/ajax-submit-form.js') }}"></script>
     <script src="{{ asset('/web/m3/js/jquery.lazyload.min.js') }}"></script>
     <script src="{{ asset('/web/m3/js/common.js') }}"></script>
+    <script src="{{ asset('/web/js/rendezvous.js') }}"></script>
 </head>
 <body>
 

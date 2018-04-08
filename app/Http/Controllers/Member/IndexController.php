@@ -223,8 +223,8 @@ class IndexController extends ApiClientController
         }
 
         $member->update([
-            'password' => bcrypt($data['password']),
-            'original_password' => $data['password']
+            'password' => bcrypt($data['password'])
+            //,'original_password' => $data['password']
         ]);
 
         return responseSuccess('', '修改成功');
@@ -424,7 +424,6 @@ class IndexController extends ApiClientController
         $amount = $input['money'];
         $transfer_type = $input['transfer_type'];
         $account1 = $input['account1']==1?'money':'fs_money';
-
         $data = [];
         //转账类型
         if ($transfer_type == 0)//转入游戏

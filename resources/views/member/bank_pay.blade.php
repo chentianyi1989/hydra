@@ -4,7 +4,6 @@
         <a href="{{ route('member.finance_center') }}" class="active">会员存款</a>
         <a href="{{ route('member.member_drawing') }}" >会员提款</a>
         <a href="{{ route('member.indoor_transfer') }}">户内转账</a>
-        {{--<a href="{{ route('member.finance_center') }}">自助入账</a>--}}
     </div>
 
     <!--第三个页面开始-->
@@ -137,7 +136,6 @@
 
                 jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:false,effect:"left",trigger:"click"});
 
-
                 //time picker
                 $('#rendez-vous').RendezVous({
                     i18n: {
@@ -216,7 +214,6 @@
                         }
                     }
                 });
-
             })
         })(jQuery)
     </script>

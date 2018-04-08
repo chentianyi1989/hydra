@@ -16,8 +16,7 @@ use DB;
 class AgController extends WebBaseController
 {
     protected $service,$api;
-    public function __construct()
-    {
+    public function __construct() {
         $this->service = new AgService();
         $this->api = Api::where('api_name', 'AG')->first();
     }
@@ -27,8 +26,7 @@ class AgController extends WebBaseController
         $res = $this->service->register($username, $password);
     }
 
-    public function balance($username, $password)
-    {
+    public function balance($username, $password) {
         //检查账号是否注册
         $member = $this->getMember();
         $member_api = $member->apis()->where('api_id', $this->api->id)->first();
@@ -130,7 +128,7 @@ class AgController extends WebBaseController
         $result = $this->service->deposit($username, $password,$amount);
         $res = json_decode($result, TRUE);
 
-        if ($res['Code'] == 0)
+        if ($res['Code'] == "0")
         {
             try{
                 
@@ -214,8 +212,7 @@ class AgController extends WebBaseController
         $result = $this->service->withdrawal($username, $password,$amount);
         $res = json_decode($result, TRUE);
 
-        if ($res['Code'] == 0)
-        {
+        if ($res['Code'] == "0") {
             try{
                 DB::transaction(function() use($member_api, $res,$amount_type,$amount,$member,$result) {
                     //平台账户
@@ -290,14 +287,18 @@ class AgController extends WebBaseController
         
 //         $start_time = date('Y-m-d H:i:s', strtotime('-180 minutes'));
         $startDate = GameRecord::where('api_type', $this->api->id)->max('recalcuTime');
-        
+        if (!$startDate) {
+            $startDate = date("Y-m-d H:i:s",strtotime("-365 day"));
+        }
 //         $startDate = date("Y-m-d",strtotime("-2 days"))." 00:00:00";
         $endDate = date("Y-m-d H:i:s");//每次同步60分钟的数据,strtotime($startDate)+ 60*60
+        
         echo "$startDate,$endDate\n";
         $page = 1;
         $pagesize = 500;
 
         $res = $this->dy('', $startDate, $endDate,$page, $pagesize);
+        echo $res;
         if ($res['Code'] == 0) {
             
             $TotalPage   = $res["PageCount"];

@@ -19,7 +19,6 @@
                 <span class="pic01"></span>
             </div>
             <div class="div-tel">
-                24小时客服QQ: 2697173363
                 <span style="margin-left: 10px;">美东时间: <em id="mdtime"></em></span>
             </div>
         </div>

@@ -10,7 +10,7 @@
       </ul>
     </div>
 </div>
-  
+  @include('web.m3.common.notice')
 <link rel="stylesheet" href="{{ asset('/web/m3/css/9388/live.css') }}">
 <div class="zhenrenPage">
     <div class="zhenren w">

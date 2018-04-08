@@ -16,7 +16,6 @@
                         </span>
                      @endforeach
                               
-                <span>QQ:2697173363、2697173363</span>
                           </marquee>
           </div>
         </div>

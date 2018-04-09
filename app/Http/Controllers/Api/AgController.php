@@ -298,7 +298,7 @@ class AgController extends WebBaseController
         $pagesize = 500;
 
         $res = $this->dy('', $startDate, $endDate,$page, $pagesize);
-        echo $res;
+        
         if ($res['Code'] == 0) {
             
             $TotalPage   = $res["PageCount"];

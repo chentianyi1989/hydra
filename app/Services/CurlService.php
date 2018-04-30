@@ -21,12 +21,12 @@ class CurlService{
     public function post($url, $data = [])
     {
         $curl = new Curl();
-        //$curl->setBasicAuthentication('username', 'password');
+        $curl->setBasicAuthentication('admin_hl', '11111111');//$curl->setBasicAuthentication('username', 'password');
 //        $curl->setUserAgent('');
 //        $curl->setHeader('X-Requested-With', 'XMLHttpRequest');
         //$curl->setCookie('key', 'value');
         $curl->post($url, $data);
-
+        var_dump($curl->request_headers);
         if ($curl->error) {
             return $curl->error_code;
         }

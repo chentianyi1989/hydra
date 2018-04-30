@@ -23,9 +23,13 @@ Route::group(['domain' => env("web_domain","{template}.localhost.com"),'namespac
 });
 */
 
-Route::group(['domain' => env("m_domain","m.localhost"), 'namespace' => 'Wap'],function ($router)
-{
-    Route::get('/','IndexController@index')->name('wap.init');
+
+
+Route::group(['domain' => env("m_domain","localhost"), 'namespace' => 'Api'],function ($router){
+    
+    Route::get('/test/gm/register','GMController@register')->name('test.gm.register');
+    
+    Route::get('/test/gm/index','GMController@index')->name('test.gm.index');
 
 });
 

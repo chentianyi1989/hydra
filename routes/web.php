@@ -29,6 +29,14 @@ Route::group(['domain' => env("m_domain","localhost"), 'namespace' => 'Api'],fun
     
     Route::get('/test/gm/register','GMController@register')->name('test.gm.register');
     
+    Route::get('/test/gm/active','GMController@active')->name('test.gm.active');
+    Route::get('/test/gm/login','GMController@register')->name('test.gm.login');
+    
+    Route::get('/test/gm/deposit','GMController@deposit')->name('test.gm.deposit');
+    Route::get('/test/gm/withdrawal','GMController@withdrawal')->name('test.gm.withdrawal');
+    Route::get('/test/gm/balance','GMController@balance')->name('test.gm.balance');
+    
+    
     Route::get('/test/gm/index','GMController@index')->name('test.gm.index');
 
 });
@@ -408,6 +416,7 @@ Route::group(['namespace' => 'Api', 'middleware' => 'auth.member:member'],functi
 
     //查询余额 统一接口
     $router->get('api/check', 'ApiClientController@check')->name('member.api.check');
+    $router->get('api/check', 'ApiClientController@login')->name('playGame');
 
 });
 

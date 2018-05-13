@@ -22,7 +22,7 @@
               <span>AG 女优厅</span>
               <a href="javascript:void(0);" title="AG"
                 @if($_member) 
-                	onclick="javascript:window.open('{{ route('ag.playGame') }}?id=13','','width=1024,height=768')" 
+                	onclick="javascript:window.open('{{ route('playGame') }}?api_name=AG&game_code=BAC','','width=1024,height=768')" 
               	@else onclick="return alert('请先登录！')"  
               	@endif>进入游戏</a>
             </div>

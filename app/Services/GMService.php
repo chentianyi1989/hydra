@@ -3,25 +3,18 @@ namespace App\Services;
 
 use App\Models\Api;
 use App\Services\CurlService;
+use Illuminate\Support\Facades\Log;
 
 
 class GMService {
     
     
     public $pre ;   // 玩家前缀
-    public $domain;
-    public $comId;
-    public $comKey ;
-    public $gamePlatform ;
-    public $debug;
-    public $salt ;
-    public $currency;
-    public $bettingProfileID;
+    public $password ;
+    
+//     public $debug;
     
     
-    public $guid_json ;
-    public $guidCode;
-    public $SessionGUID;// 获取sessionguid
     
 //     (测试环境 )
 //     https://dynastyggroup.com/
@@ -31,28 +24,22 @@ class GMService {
 //     https://api.gmaster8.com
     
     public function __construct() {
-        $mod = Api::where('api_name', 'GM')->first();
-        $this->pre = $mod->prefix;   // 玩家前缀
-        $this->domain    = $mod->api_domain;
-        $this->comId   = $mod->api_id;
-        $this->comKey  = $mod->api_key;
-        $this->gamePlatform = $mod->api_name;
-        $this->debug = 0;
-        $this->currency = 8;
-        $this->bettingProfileID = 370;
+        
+        $this->pre = "sup";   // 玩家前缀
+        $this->domain    = "https://api.gmaster8.com";
+        $this->password = "123456";
     }
     
     
     /*
      * 创建账号  http://<domain>/api/mg/register.ashx
      */
-    public function register($username,$password){
+    public function register($username){
         
         $url = $this->domain."/register";
-        echo "url:$url<br/>";
-        $post_data = ["username"=>$username,"password"=>$password];
+        $post_data = ["username"=>$this->pre.$username,"password"=>$this->password];
         $receive = $this->send_post($url,$post_data);
-        return $receive;
+        return json_decode($receive, TRUE);
     }
     
     /*
@@ -61,50 +48,66 @@ class GMService {
      * 
      * $mobile： yes html5
      */
-    public function login($username,$password,$api,$game_code,$mobile,$lang){
-        $lang = "zh-CN";
+    public function login($username,$api,$game_code,$mobile="yes",$lang="zh-CN"){
         
-        $url = "http://".$this->domain."/$api/game/open";
-        
-        $post_data = ['userName'=>$username,'password'=>$password,'game_code'=>$game_code,'lang'=>$lang];
-        
+        $url = $this->domain."/$api/game/open";
+        $post_data = ['username'=>$this->pre.$username,'game_code'=>$game_code,'lang'=>$lang];
         $receive = $this->send_post($url,$post_data);
-        return $receive;
+        return json_decode($receive, TRUE);
     }
     
     /*
      * 存款 http://<API	domain>/<Platform>	/credit/deposit
      */
-    public function deposit($username,$password,$amount,$api){
+    public function deposit($username,$api,$amount){
         
-        $url = "http://".$this->domain."/$api/credit/deposit";
-        $post_data = ['username'=>$username,'password'=>$password,'amount'=>$amount,];
+        $url = $this->domain."/$api/credit/deposit";
+        $post_data = ['username'=>$this->pre.$username,'amount'=>$amount,"externalTransactionId"=>getBillNo()];
+//         log::info("GMService",["post_data"=>$post_data,"url"=>$url]);
         $receive = $this->send_post($url,$post_data);
-        return $receive;
+        return json_decode($receive, TRUE);
     }
     
     /*
      * 提款 http://<API	domain>/<Platform>/credit/withdrawal
      */
-    public function withdrawal($username,$password,$amount){
+    public function withdrawal($username,$api,$amount){
         
-        $url = "http://".$this->domain."/api/mg/withdrawal.ashx";
-        $post_data = array('username'=>$username,'password'=>$password,'amount'=>$amount);
-        
+        $url = $this->domain."/$api/credit/withdrawal";
+        $post_data = array('username'=>$this->pre.$username,'amount'=>$amount,"externalTransactionId"=>getBillNo());
         $receive = $this->send_post($url,$post_data);
-        return $receive;
+        return json_decode($receive, TRUE);
     }
     
     /*
      * 查询玩家余额 http://<API	domain>/<Platform>/player/balance
      */
-    public function balance($username,$password,$api){
+    public function balance($username,$api){
         
-        $url = "http://".$this->domain."/$api/player/balance";
-        $post_data = array('username'=>$username,'password'=>$password);
-        
+        $url = $this->domain."/$api/player/balance";
+        $post_data = array('username'=>$this->pre.$username);
+        log::info("GMService:",["balance.username"=>$this->pre.$username]);
+        log::info("GMService:",["balance.url"=>$url]);
         $receive = $this->send_post($url,$post_data);
-        return $receive;
+        log::info("GMService:",["balance.receive"=>$receive]);
+        return json_decode($receive, TRUE);
+    }
+    
+    /*
+     * 激活平台 ：<API	domain>/<Platform>/player/active
+     */
+    public function active ($username,$api) {
+        $url = $this->domain."/$api/player/active";
+        $post_data = array('username'=>$this->pre.$username);
+        $receive = $this->send_post($url,$post_data);
+        return json_decode($receive, TRUE);
+    }
+    
+    public function game_record ($api,$fromDate,$toDate) {
+        $url = $this->domain."/$api/game/history";
+        $post_data = array('fromDate'=>$fromDate,'toDate'=>$toDate);
+        $receive = $this->send_post($url,$post_data);
+        return json_decode($receive, TRUE);
     }
     
     protected function send_post($url,$post_data) {

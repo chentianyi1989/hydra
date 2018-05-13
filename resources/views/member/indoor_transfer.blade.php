@@ -57,19 +57,6 @@
     </div>
     <div class="indoor_line dividend_bonus">
         <h3><span class="tit">转账红利</span></h3>
-        <!-- <dl>
-            <dt><img src="{{ asset('/web/images/indoorIcon1.jpg') }}">MG老虎机账户首存送100%红利</dt>
-        </dl>
-        <dl>
-            <dt><img src="{{ asset('/web/images/indoorIcon1.jpg') }}">MG老虎机每日首存送50%红利</dt>
-        </dl>
-        <dl>
-            <dt><img src="{{ asset('/web/images/indoorIcon1.jpg') }}">MG老虎机笔笔存送30%红利</dt>
-        </dl>
-        <dl>
-            <dt><img src="{{ asset('/web/images/indoorIcon2.jpg') }}">下次参与</dt>
-            <dd>直接转入游戏<span class="themeCr">0</span>元红利，并锁定此游戏转账通道，需要达到100流水或游戏账户小于<span class="themeCr">1</span>元解锁转账通道。</dd>
-        </dl> -->
 
         <dl>
           <dt><input type="radio" class="radio" name="1" id="dividend_bonus1"><label for="dividend_bonus1">MG老虎机账户首存送100%红利</label></dt>

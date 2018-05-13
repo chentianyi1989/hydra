@@ -6,16 +6,20 @@ use App\Http\Controllers\Web\WebBaseController;
 use App\Services\CurlService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Services\GMService;
 
 class ApiClientController extends WebBaseController
 {
 
     //查询余额
-    public function check(Request $request)
-    {
+    public function check(Request $request) {
         $api_name = strtoupper($request->get('api_name'));
         $member = $this->getMember();
         $res = '';
+        
+        $service = new GMController();
+        $res = $service->balance($member->name, $api_name);
+        /**
         switch ($api_name){
             case 'AG':
                 $mod = new AgController();
@@ -50,15 +54,17 @@ class ApiClientController extends WebBaseController
                 $res =  $mod->balance($member->name, $member->original_password);
                 break;
         }
-
+        */
         return $res;
     }
 
     //转入游戏
-    public function deposit($api_name,$username,$password,$amount,$amount_type)
-    {
+    public function deposit($api_name,$username,$password,$amount,$amount_type) {
         $api_name = strtoupper($api_name);
         $res = '';
+        $service = new GMController();
+        $res = $service->deposit($username, $api_name,$amount);
+        /*
         switch ($api_name){
             case 'AG':
                 $mod = new AgController();
@@ -92,16 +98,18 @@ class ApiClientController extends WebBaseController
                 $mod = new OgController();
                 $res = $mod->deposit($username, $password, $amount, $amount_type);
                 break;
-        }
+        }*/
 
         return $res;
     }
 
     //转出游戏
-    public function withdrawal($api_name,$username,$password,$amount,$amount_type)
-    {
+    public function withdrawal($api_name,$username,$password,$amount,$amount_type) {
         $api_name = strtoupper($api_name);
         $res = '';
+        $service = new GMController();
+        $res = $service->withdrawal($username, $api_name,$amount);
+        /*
         switch ($api_name){
             case 'AG':
                 $mod = new AgController();
@@ -136,14 +144,19 @@ class ApiClientController extends WebBaseController
                 $res = $mod->withdrawal($username, $password, $amount, $amount_type);
                 break;
         }
-
+        */
         return $res;
     }
 
-//    public function login(Request $request)
-//    {
-//
-//        $api_name = strtoupper($request->get('api_name'));
+    public function login(Request $request) {
+
+       $api_name = strtoupper($request->get('api_name'));
+       $game_code = strtoupper($request->get('game_code'));
+       $member = $this->getMember();
+       $service = new GMController();
+       $url = $service->login($member->name, $api_name,$game_code);
+       return redirect()->to($url);
+       
 //        $member = $this->getMember();
 //        $username = $member->name;
 //        $password = $member->original_password;
@@ -166,13 +179,13 @@ class ApiClientController extends WebBaseController
 //                $res =  $mod->login($username,$password, $request->get('product_type'), $request->get('game_code'));
 //                break;
 //        }
-//
+
 //        if ($res['status'] == 0)
 //            return redirect()->to($res['url']);
 //        else
 //            echo $res['message'];exit;
-//
-//    }
+
+   }
 
 
 //    public function getRegister()

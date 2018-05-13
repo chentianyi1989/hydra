@@ -39,7 +39,7 @@
                 ?>
         <li>
             <p class="name">{{ $item->api_name }}厅 <span class="pos">@if($mod) {{ $mod->money }}  @else N/A @endif</span><a class="refresh" href="javascript:void(0)" data-uri="{{ route('member.api.check') }}?api_name={{ $item->api_name }}"></a></p>
-            <p class="account">游戏账号：<span class="viceColor" data-username="{{ $item->prefix.$_member->name }}">@if($mod) {{ $item->prefix.$_member->name  }}  @else 未开通 @endif</span></p>
+            <p class="account">游戏账号：<span class="viceColor" data-username="{{ $item->prefix.$_member->name }}">@if($mod) {{ $mod->username  }}  @else 未开通 @endif</span></p>
         </li>
         @endforeach
 
@@ -100,7 +100,7 @@
                         alert(data.Message);
                         return ;
                     }
-                    pos.html(data.Data+'元');
+                    pos.html(data.balance+'元');
                     money_span.html(money_span.attr('data-username'))
                     //console.log(data)
                 },

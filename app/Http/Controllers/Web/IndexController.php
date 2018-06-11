@@ -4,13 +4,11 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Activity;
-use App\Models\BlackListIp;
 use App\Models\GameList;
 use App\Models\Member;
 use App\Models\MemberLoginLog;
 use App\Models\SystemConfig;
 use App\Models\SystemNotice;
-use App\Services\TcgService;
 use Illuminate\Http\Request;
 use App\Traits\ValidationTrait;
 use Auth;
@@ -109,48 +107,80 @@ class IndexController extends Controller
             return responseWrong($messages);
         }
 
-        if(!$request->has('i_code'))
+        if(!$request->has('i_code')){
             return responseWrong('无效提交');
-
-        if (strlen((string)$request->get('name')) >10  || strlen((string)$request->get('name')) < 7)
+        }
+        if (strlen((string)$request->get('name')) >10  || strlen((string)$request->get('name')) < 7){
             return responseWrong('用户名为7-10位数字字母组合');
-
-        if(preg_match("/[\'.,:;*?~`!@#$%^&+=)(<>{}]|\]|\[|\/|\\\|\"|\|/",$request->get('name')))
+        }
+        if(preg_match("/[\'.,:;*?~`!@#$%^&+=)(<>{}]|\]|\[|\/|\\\|\"|\|/",$request->get('name'))){
             return responseWrong('不允许输入特殊字符');
-
+        }
         $data = $request->all();
 
         $name = trim($data['name'], ' ');
         $pwd = trim($data['password'], ' ');
         $i_code = isset($data['i_code'])?trim($data['i_code'], ' '):'';
 
-        if (Member::where('name', $data['name'])->first())
+        if (Member::where('name', $data['name'])->first()){
             return responseWrong('该账号已被注册');
-
-        return responseSuccess('', '', route('web.register_two')."?register_name=$name&pwd=$pwd&i_code=$i_code");
+        }
+        
+        $code = base64_encode(json_encode(["username"=>$name,"pwd"=>$pwd,"i_code"=>$i_code]));
+//         $code = $i_code;
+        
+        return responseSuccess('', '', route('web.register_two')."?register_name=$name&i_code=$i_code&code=$code");//pwd=$pwd&i_code=$i_code
+//         return view('web.register_two', compact('register_name', 'pwd', 'i_code'));
     }
 
-    public function register_two(Request $request)
-    {
+    public function register_two(Request $request) {
+        
+        //         $pwd = $request->get('pwd');
         $register_name = $request->get('register_name');
-        $pwd = $request->get('pwd');
         $i_code = $request->get('i_code');
-
-        return view('web.register_two', compact('register_name', 'pwd', 'i_code'));
+        
+        $code = $request->get('code');
+        
+        $arr = json_decode(base64_decode($code));
+        
+//         var_dump($arr) ;
+//         var_dump($arr->username);
+//         var_dump($register_name);
+//         var_dump($i_code);
+//         var_dump($arr->username == $register_name && $arr->i_code == $i_code);
+        
+        if($arr == null) {
+            $flag = false;
+        }else {
+            $flag = ($arr->username == $register_name && $arr->i_code == $i_code);
+        }
+        
+        return view('web.register_two', compact('register_name', 'code', 'i_code','flag'));
+        
     }
 
     public function post_register_two(Request $request)
     {
         $validator = $this->verify($request, 'member.register_two');
 
-        if ($validator->fails())
-        {
+        if ($validator->fails()) {
             $messages = $validator->messages()->toArray();
             return responseWrong($messages);
         }
 
         $data = $request->all();
-
+        
+        $code = $data['code'];
+        
+        $arr = json_decode(base64_decode($code));
+        
+        
+        if ($arr==null || $arr->username != $data['name'] || $arr->i_code != $request->get('invite_code')) {
+            return responseWrong('无效url连接，请重新开始注册');
+        }
+        
+        $password = $arr->pwd;
+        
         //判断是否为代理邀请注册
         $dali_mod = '';
         if ($request->has('invite_code'))
@@ -161,7 +191,7 @@ class IndexController extends Controller
         Member::create([
             'name' => $data['name'],
             'original_password' => substr(md5(md5($data['name'])), 0,10),
-            'password' => bcrypt($data['password']),
+            'password' => bcrypt($password),
             'invite_code' => time().str_random(5),
             'real_name' => $data['real_name'],
             'gender' => $data['gender'],
@@ -173,7 +203,7 @@ class IndexController extends Controller
             'register_ip' => $request->getClientIp()
         ]);
 
-        if (Auth::guard('member')->attempt(['name' => $data['name'], 'password' => $data['password']]))
+        if (Auth::guard('member')->attempt(['name' => $data['name'], 'password' => $password]))
         {
             //return respS('登录成功',  route('member.index'));
             $member = auth('member')->user();

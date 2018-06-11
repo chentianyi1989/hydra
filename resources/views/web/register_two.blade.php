@@ -13,7 +13,7 @@
                     <div class="line_form">
                         <form method="POST" action="{{ route('web.post_register_two') }}">
                             <input type="hidden" name="name" value="{{ $register_name }}">
-                            <input type="hidden" name="password"  value="{{ $pwd }}">
+                            <input type="hidden" name="code"  value="{{ $code }}">
                             <input type="hidden" name="invite_code" value="{{ $i_code }}">
                             <div class="line">
                                 <span class="tit">真实姓名</span>
@@ -56,7 +56,11 @@
                             </div>
                             <div class="line">
                                 <span class="tit"></span>
-                                <a href="javascript:;" class="ajax-submit-without-confirm-btn account_save">确定</a>
+                                @if($flag==true) 
+                                	<a href="javascript:;" class="ajax-submit-without-confirm-btn account_save">确定</a>
+                                @else
+                                	<span >url 已经被篡改，请重新注册</span>
+                                @endif
                                 <a href="{{ route('web.register_one') }}?register_name={{ $register_name }}" class="account_save">返回上一步</a>
                             </div>
                         </form>

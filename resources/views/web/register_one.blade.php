@@ -12,7 +12,6 @@
                     <div class="bank_tips">温馨提示： 标志*为必填项目 注意：如发现客户拥有多个账户，其帐户将会被冻结并且取消所有胜出的投注，恕不另行通知。</div>
                     <div class="line_form">
                         <form method="POST" action="{{ route('web.post_register_one') }}">
-                            <input type="hidden" name="i_code" value="{{ $i_code }}">
                             <div class="line">
                                 <span class="tit">登录账号</span>
                                     <input class="inp" name="name" value="{{ $register_name }}">
@@ -30,7 +29,7 @@
                             </div>
                             <div class="line">
                                 <span class="tit">邀请码</span>
-                                <input class="inp" name="invite_code">
+                                <input class="inp" name="i_code">
                                 <span class="tips"><span class="themeCr">*</span>邀请码</span>
                             </div>
                             <div class="line minline">

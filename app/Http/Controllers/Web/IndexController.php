@@ -192,7 +192,7 @@ class IndexController extends Controller
             'name' => $data['name'],
             'original_password' => substr(md5(md5($data['name'])), 0,10),
             'password' => bcrypt($password),
-            'invite_code' => time().str_random(5),
+            'invite_code' => str_random(5),
             'real_name' => $data['real_name'],
             'gender' => $data['gender'],
             'phone' => $data['phone'],
